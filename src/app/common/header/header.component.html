@@ -1,0 +1,39 @@
+<div class="header">
+  <div class="headerContent">
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="">
+    </div>
+    <div class="menu">
+      <a class="menuButton" routerLink=""  >
+        <span [matMenuTriggerFor]="inicio">INICIO</span>
+        <i class="material-icons">arrow_drop_down</i>
+      </a>
+      <a class="menuButton">
+        <span>GUIA</span>
+      </a>
+
+      <a class="menuButton">
+        <span>NOVIDADES</span>
+      </a>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="painel">
+      <a class="painelButton" mat-raised-button href="https://www.google.com/" target="_blank">PAINEL DO JOGADOR</a>
+    </div>
+  </div>
+  <mat-menu #inicio="matMenu" class="menu-primary">
+    <a class="matMenuHome"  routerLink="" fragment="inicio">
+      <span mat-menu-item>Download</span>
+    </a>
+    <a class="matMenuHome"  routerLink="" fragment="sobre">
+      <span mat-menu-item>Sobre Servidor</span>
+    </a>
+    <a class="matMenuHome"  routerLink="" fragment="classes">
+      <span mat-menu-item>Classes</span>
+    </a>
+    <a class="matMenuHome"  routerLink="" fragment="eventos">
+      <span mat-menu-item>Eventos</span>
+    </a>
+  </mat-menu>
+</div>
+

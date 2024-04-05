@@ -1,0 +1,102 @@
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(32,32,32,1);
+    z-index: 99;
+    box-shadow: -6px -45px 43px 35px rgba(255,255,255,0.5);
+-webkit-box-shadow: -6px -45px 43px 35px rgba(255,255,255,0.5);
+-moz-box-shadow: -6px -45px 43px 35px rgba(255,255,255,0.5);
+}
+
+.headerContent {
+    margin-left: 70px;
+    align-items: center;
+    height: 112px;
+    display: flex;
+}
+
+.logo{
+    width: 180px;
+    height: 77px;
+}
+
+.menu {
+    font-family:'Cinzel', serif;
+    font-size: 30px;
+
+    a {
+        color: white;
+        text-decoration: none;
+        transition: color .5 ease-out;
+    }
+    
+    a:hover {
+        text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #fff; // <-
+        // 0 0 80px #fff,
+        // 0 0 90px #fff,
+        // 0 0 100px #fff,
+        // 0 0 150px #fff;
+        cursor: pointer;
+        text-decoration: underline;
+        // ************* TRANSITION COLOR ***********
+        // color: #d6c7a4;
+        // -webkit-transition: color 1s ease-out;
+        // -moz-transition: color 1s ease-out;
+        // -o-transition: color 1s ease-out;
+        // transition: color 1s ease-out;
+    }
+}
+
+.painel {
+    margin: 0 20px 0 20px;
+}
+
+.menuButton {
+    margin-left: 20px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+/**********************************************************
+                    CUSTOM MENU STYLE
+**********************************************************/
+
+::ng-deep .menu-primary .mat-mdc-menu-content,
+::ng-deep .menu-primary .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
+    font-family:'Cinzel', serif;
+    font-size: 20px;
+    color: white;
+    a {
+        color: white;
+        text-decoration: none;
+        transition: color .5 ease-out;
+    }
+    
+    
+}
+
+::ng-deep .menu-primary .mat-mdc-menu-content,
+::ng-deep .menu-primary .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text:hover {
+    a:hover {
+        text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #fff; 
+    }
+}
+
+::ng-deep .menu-primary.mdc-menu-surface {
+    background-color: rgba(32,32,32,1);
+}
+
+    
+

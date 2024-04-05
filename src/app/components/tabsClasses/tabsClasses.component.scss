@@ -1,0 +1,143 @@
+/**********************************************************
+                    CUSTOM CARD CLASSES
+**********************************************************/
+
+.classes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    overflow: hidden;
+}
+
+.card{
+    width: calc(300px /1.5);
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover .wrapper{
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after{
+    content: '';
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+
+.wrapper::before{
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent 46%, rgba(12,13,19,0.5)68%, rgba(12,13,19)97%);
+}
+
+.wrapper::after{
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(to bottom, transparent 46%, rgba(12,13,19,0.5)68%, rgba(12,13,19)97%);
+}
+
+.card:hover .wrapper::before, .wrapper::after{
+    opacity: 1;
+}
+
+.card:hover .wrapper::after{
+    height: 120px;
+}
+
+.character {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.5s;
+}
+
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+
+.title {
+    margin-top: 340px;
+    transition: transform 0.5s;
+    opacity: 0;
+}
+
+.card:hover .title{
+    transform: translate3d(0%, -50px, 100px);
+    opacity: 1;
+}
+
+
+/**********************************************************
+                    CUSTOM THEME TABS
+**********************************************************/
+
+
+// change tab header text color
+::ng-deep .mat-mdc-tab .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+    color: white !important;
+}
+
+// change global tab CSS
+::ng-deep .mdc-tab {
+    font-size: 20px !important;
+    font-family:'Cinzel', serif !important;
+}
+
+/*---------------- For Success Theme Color ----------------*/
+// change Active Tab Header Label Color (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    color: #AC223C !important;
+}
+
+// change Active Tab Bottom Border Color (Success color)
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+    border-color: #AC223C !important;
+}
+
+// change Background Ripple Color on Click (Success Color)
+::ng-deep .mat-mdc-tab-group.mat-success .mdc-tab__ripple::before,
+::ng-deep .mat-mdc-tab-group.mat-success .mat-mdc-tab .mat-ripple-element,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-header-pagination .mat-ripple-element,
+::ng-deep .mat-mdc-tab-nav-bar.mat-success .mat-mdc-tab-link .mat-ripple-element {
+    background-color: #AC223C !important;
+}
