@@ -1,6 +1,6 @@
 <div class="root">
   <div class="content">
-    <app-header></app-header>
+    <app-header *ngIf="!isPAdmin"></app-header>
     <div class="body">
       <router-outlet></router-outlet>
     </div>

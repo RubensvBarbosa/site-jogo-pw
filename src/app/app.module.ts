@@ -14,13 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [	
     AppComponent,
       HomeComponent,
       HeaderComponent,
-      TabsClassesComponent
+      TabsClassesComponent,
+      AdminLoginComponent
    ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatStepperModule,
     MatTabsModule,
     MatMenuModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
