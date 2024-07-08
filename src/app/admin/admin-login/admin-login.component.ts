@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, signal } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,36 +9,40 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AdminLoginComponent implements OnInit {
   loginForm!: FormGroup;
   isShowPassword: boolean = false;
-  hide = true;
+  hide = signal(true);
   clickEvent(event: MouseEvent) {
-    // this.hide.set(!this.hide());
+    this.hide.set(!this.hide());
     event.stopPropagation();
   }
-  constructor() { }
-
-  ngOnInit() {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+  constructor(private fb: FormBuilder) { 
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
-  get email() {
-    return this.loginForm.get('email')!;
-  }
-
-  get password() {
-    return this.loginForm.get('password')!;
+  ngOnInit() {
+    // this.loginForm = new FormGroup({
+    //   username: new FormControl('', [Validators.required]),
+    //   password: new FormControl('', [Validators.required]),
+    // });
   }
 
   onSubmit = () => {
-    if (this.loginForm.invalid) {
-      return;
+    // if (this.loginForm.invalid) {
+    //   return;
+    // }
+    // console.log('login: ',
+    //   this.loginForm.value.username,
+    //   this.loginForm.value.password
+    // );
+    if (this.loginForm.valid) {
+      const username = this.loginForm.get('username')?.value;
+      const password = this.loginForm.get('password')?.value;
+      console.log('Username:', username);
+      console.log('Password:', password);
+      // Faça algo com a senha, como enviar para um servidor
     }
-    console.log('login: ',
-      this.loginForm.value.email,
-      this.loginForm.value.password
-    );
   };
 
   toggleShow = () => {
