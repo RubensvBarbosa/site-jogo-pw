@@ -22,20 +22,10 @@ export class AdminLoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.loginForm = new FormGroup({
-    //   username: new FormControl('', [Validators.required]),
-    //   password: new FormControl('', [Validators.required]),
-    // });
+
   }
 
   onSubmit = () => {
-    // if (this.loginForm.invalid) {
-    //   return;
-    // }
-    // console.log('login: ',
-    //   this.loginForm.value.username,
-    //   this.loginForm.value.password
-    // );
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;

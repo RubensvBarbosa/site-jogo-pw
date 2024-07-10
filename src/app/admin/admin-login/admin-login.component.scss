@@ -1,0 +1,20 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family:'Cinzel', serif !important;
+    color: #202020;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
