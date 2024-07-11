@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatCardModule } from '@angular/material/card';
       HomeComponent,
       HeaderComponent,
       TabsClassesComponent,
-      AdminLoginComponent
+      AdminLoginComponent,
+      AdminHomeComponent
    ],
   imports: [
     BrowserModule,
