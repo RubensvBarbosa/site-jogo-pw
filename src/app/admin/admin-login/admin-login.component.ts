@@ -1,5 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -14,7 +15,7 @@ export class AdminLoginComponent implements OnInit {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private router: Router) { 
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -31,7 +32,7 @@ export class AdminLoginComponent implements OnInit {
       const password = this.loginForm.get('password')?.value;
       console.log('Username:', username);
       console.log('Password:', password);
-      // Faça algo com a senha, como enviar para um servidor
+      this.router.navigate(['padmin/home']);
     }
   };
 

@@ -1,0 +1,30 @@
+<div class="content">
+  <div>
+    <p class="title"> Criar Conta</p>
+  </div>
+  <div class="body">
+    <form
+        (ngSubmit)="onSubmit()"
+        [formGroup]="createForm"
+        class="form"
+        >
+          <mat-form-field>
+            <mat-label>Nome de utilizador</mat-label>
+            <input 
+              matInput 
+              type="text"
+              formControlName="username"
+              />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Coloque sua senha</mat-label>
+            <input 
+              matInput 
+              type="password"
+              formControlName="password"
+              />
+          </mat-form-field>
+          <button type="submit" mat-raised-button>Criar</button>
+        </form>
+  </div>
+</div>

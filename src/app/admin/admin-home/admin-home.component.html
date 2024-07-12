@@ -1,3 +1,22 @@
-<p>
-  admin-home works!
-</p>
+<div class="container">
+  <div class="card-container">
+    <mat-card appearance="outlined" class="card-content">
+      <mat-card-content style="display: flex; width: 98%; height: 96%;">
+          <div class="menu">
+                <div>
+                  <div class="title">
+                    <p>Ola! ZeT</p>
+                  </div>
+                  <button mat-stroked-button style="width: 100%;" (click)="onClick('create')">Criar Conta</button>
+                  <button mat-stroked-button style="width: 100%;">Gerir Contas</button>
+                  <button mat-stroked-button style="width: 100%;">Postar Notícias</button>
+                </div>
+                <button mat-stroked-button style="width: 100%;">Sair</button>
+          </div>
+          <div class="body">
+            <create-user class="body-content"></create-user>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

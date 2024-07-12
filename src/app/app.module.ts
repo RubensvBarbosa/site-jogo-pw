@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './common/header/header.component';
 import { TabsClassesComponent } from './components/tabsClasses/tabsClasses.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AdminCreateUserComponent } from './admin/admin-create-user/admin-create-user.component';
 
 
 //ANGULAR MATERIAL
@@ -14,13 +17,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
-import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
       HeaderComponent,
       TabsClassesComponent,
       AdminLoginComponent,
-      AdminHomeComponent
+      AdminHomeComponent,
+      AdminCreateUserComponent
    ],
   imports: [
     BrowserModule,
