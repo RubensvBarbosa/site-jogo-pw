@@ -9,6 +9,8 @@ import { TabsClassesComponent } from './components/tabsClasses/tabsClasses.compo
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminCreateUserComponent } from './admin/admin-create-user/admin-create-user.component';
+import { AdminPostNewsComponent } from './admin/admin-post-news/admin-post-news.component';
+import { AdminManagementUserComponent } from './admin/admin-management-user/admin-management-user.component';
 
 
 //ANGULAR MATERIAL
@@ -22,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { MatCardModule } from '@angular/material/card';
       TabsClassesComponent,
       AdminLoginComponent,
       AdminHomeComponent,
-      AdminCreateUserComponent
+      AdminCreateUserComponent,
+      AdminPostNewsComponent,
+      AdminManagementUserComponent
    ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatTableDataSource
   ],
   providers: [],
   bootstrap: [AppComponent]

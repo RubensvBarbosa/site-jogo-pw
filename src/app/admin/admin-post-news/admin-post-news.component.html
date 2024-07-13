@@ -1,0 +1,30 @@
+<div class="content">
+  <div>
+    <p class="title"> Postar Notícia</p>
+  </div>
+  <div class="body">
+    <form
+        (ngSubmit)="onSubmit()"
+        [formGroup]="createForm"
+        class="form"
+        >
+          <mat-form-field>
+            <mat-label>Titulo</mat-label>
+            <input 
+              matInput 
+              type="text"
+              formControlName="titulo"
+              />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Detalhes da notícia</mat-label>
+            <textarea  
+              matInput 
+              formControlName="noticia"
+              style="height: 250px;"
+              ></textarea> 
+          </mat-form-field>
+          <button type="submit" mat-raised-button>Criar</button>
+        </form>
+  </div>
+</div>

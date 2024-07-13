@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'create-user',
-  templateUrl: './admin-create-user.component.html',
-  styleUrls: ['./admin-create-user.component.scss']
+  selector: 'post-news',
+  templateUrl: './admin-post-news.component.html',
+  styleUrls: ['./admin-post-news.component.scss']
 })
-export class AdminCreateUserComponent implements OnInit {
+export class AdminPostNewsComponent implements OnInit {
   createForm!: FormGroup;
 
   constructor(private fb: FormBuilder) { 
     this.createForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      titulo: ['', Validators.required],
+      noticia: ['', Validators.required]
     }); 
   }
 

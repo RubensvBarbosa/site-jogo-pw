@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHomeComponent implements OnInit {
   isCreate: boolean = false;
+  isPost: boolean = false;
 
   constructor() { }
 
@@ -14,7 +15,14 @@ export class AdminHomeComponent implements OnInit {
   }
 
   onClick = (event: string) => {
-    
+    if(event === 'create'){
+      this.isPost = false;
+      this.isCreate = !this.isCreate
+    }
+    if(event === 'post'){
+      this.isCreate = false;
+      this.isPost = !this.isPost
+    }
   }
 
 }
