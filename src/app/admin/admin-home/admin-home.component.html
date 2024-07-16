@@ -5,13 +5,14 @@
           <div class="menu">
                 <div>
                   <div class="title">
-                    <p>Ola! ZeT</p>
+                    <p>Ola!</p>
+                    <p>{{user.username}}</p>
                   </div>
                   <button mat-stroked-button style="width: 100%;" (click)="onClick('create')" >Criar Conta</button>
                   <button mat-stroked-button style="width: 100%;" (click)="onClick('management')">Gerir Contas</button>
                   <button mat-stroked-button style="width: 100%;" (click)="onClick('post')">Postar Notícias</button>
                 </div>
-                <button mat-stroked-button style="width: 100%;">Sair</button>
+                <button mat-stroked-button style="width: 100%;" (click)="logOut()">Sair</button>
           </div>
           <div class="body">
             <create-user *ngIf="isCreate" class="body-content"></create-user>

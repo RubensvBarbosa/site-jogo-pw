@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
+import { User } from '../admin-user.model';
 
 @Component({
   selector: 'app-admin-home',
@@ -9,10 +12,12 @@ export class AdminHomeComponent implements OnInit {
   isCreate: boolean = false;
   isPost: boolean = false;
   isManagement: boolean = false;
+  user!: User;
 
-  constructor() { }
+  constructor(private router: Router,  private adminService: AdminService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   onClick = (event: string) => {
@@ -33,4 +38,8 @@ export class AdminHomeComponent implements OnInit {
     }
   }
 
+  logOut = () => {
+    this.router.navigate(['padmin'])
+    localStorage.clear();
+  }
 }

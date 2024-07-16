@@ -11,6 +11,9 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminCreateUserComponent } from './admin/admin-create-user/admin-create-user.component';
 import { AdminPostNewsComponent } from './admin/admin-post-news/admin-post-news.component';
 import { AdminManagementUserComponent } from './admin/admin-management-user/admin-management-user.component';
+import { AdminService } from './admin/admin.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SecurityGuard } from './admin/security.guard';
 
 
 //ANGULAR MATERIAL
@@ -38,9 +41,10 @@ import { MatTableModule } from '@angular/material/table';
       AdminHomeComponent,
       AdminCreateUserComponent,
       AdminPostNewsComponent,
-      AdminManagementUserComponent
+      AdminManagementUserComponent,
    ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -55,7 +59,10 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    AdminService,
+    SecurityGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
