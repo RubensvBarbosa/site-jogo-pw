@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'create-user',
@@ -8,19 +9,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AdminCreateUserComponent implements OnInit {
   createForm!: FormGroup;
+  isAdmin = false;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private adminService: AdminService) { 
     this.createForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     }); 
   }
 
   ngOnInit() {
   }
 
+  onAdmin = (event: any) => {
+    console.log(event.checked);
+    this.isAdmin = event.checked;
+  }
+
   onSubmit = () => {
-    console.log('Criar');
+    const username = this.createForm.get('username')?.value;
+    const password = this.createForm.get('password')?.value;
+    this.createForm.reset()
+    this.isAdmin = false;
+    if(username && password){
+      this.adminService.createUser(username, password, this.isAdmin)
+    }
   }
 
 }

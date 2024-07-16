@@ -44,4 +44,18 @@ export class AdminService {
   public getUser = (): User | undefined => {
     return this.user ? {...this.user} : undefined
   }
+
+  public createUser = (username: string, password: string, admin: boolean) => {
+    const user = {username: username, password: password, admin: admin}
+
+    const successHandler = (result: any) => {
+      console.log(result);
+    }
+
+    this.http.post<any>('http://localhost:3305/users/create', user).subscribe(successHandler)
+  }
+
+  public allUsers = () => {
+    return this.http.get<Iuser[]>('http://localhost:3305/users');
+  }
 }

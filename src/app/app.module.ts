@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -57,7 +58,8 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [
     AdminService,

@@ -30,8 +30,6 @@ export class AdminLoginComponent implements OnInit {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;
-      console.log('Username:', username);
-      console.log('Password:', password);
       this.adminService.login(username, password);
     }
   };

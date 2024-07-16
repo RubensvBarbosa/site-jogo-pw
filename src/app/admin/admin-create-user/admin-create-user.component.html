@@ -24,6 +24,7 @@
               formControlName="password"
               />
           </mat-form-field>
+          <mat-checkbox style="margin-bottom: 15px;" [color]="'primary'" [checked]="isAdmin" (change)="onAdmin($event)">Admin</mat-checkbox>
           <button type="submit" mat-raised-button>Criar</button>
         </form>
   </div>

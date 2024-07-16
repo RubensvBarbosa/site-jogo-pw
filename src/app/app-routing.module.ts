@@ -8,7 +8,8 @@ import { SecurityGuard } from './admin/security.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'padmin', component: AdminLoginComponent},
-  { path: 'padmin/home', canActivate:[SecurityGuard], component: AdminHomeComponent}
+  // { path: 'padmin/home', canActivate:[SecurityGuard], component: AdminHomeComponent}
+  { path: 'padmin/home', component: AdminHomeComponent}
 ];
 
 
