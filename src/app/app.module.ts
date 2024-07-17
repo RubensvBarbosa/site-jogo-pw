@@ -29,11 +29,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NoticiasComponent } from './noticias/noticias.component';
 
 
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
       HomeComponent,
       HeaderComponent,
@@ -43,6 +44,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
       AdminCreateUserComponent,
       AdminPostNewsComponent,
       AdminManagementUserComponent,
+      NoticiasComponent,
    ],
   imports: [
     HttpClientModule,

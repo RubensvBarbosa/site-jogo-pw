@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private actovateRoute: ActivatedRoute) { }
+  constructor(private actovateRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.actovateRoute.fragment.subscribe((value) => {
@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
   
   jumpTo(section:any){
     document.getElementById(section)?.scrollIntoView({behavior: 'smooth'});
+  }
+
+  onNoticias(){
+    this.router.navigate(['noticias'])
   }
 
 }
