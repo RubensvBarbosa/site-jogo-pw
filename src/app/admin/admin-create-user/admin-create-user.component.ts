@@ -29,10 +29,10 @@ export class AdminCreateUserComponent implements OnInit {
     const username = this.createForm.get('username')?.value;
     const password = this.createForm.get('password')?.value;
     this.createForm.reset()
-    this.isAdmin = false;
     if(username && password){
       this.adminService.createUser(username, password, this.isAdmin)
     }
+    this.isAdmin = false;
   }
 
 }

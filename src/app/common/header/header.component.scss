@@ -73,14 +73,39 @@
 ::ng-deep .menu-primary .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text {
     font-family:'Cinzel', serif;
     font-size: 20px;
-    color: white;
-    a {
-        color: white;
+    background-color: #202020 !important;
+}
+
+
+
+::ng-deep .mat-mdc-menu-item  {
+    color: #fff !important;
+
+    span {
+        color: #fff;
         text-decoration: none;
         transition: color .5 ease-out;
     }
     
-    
+    span:hover {
+        text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #fff; // <-
+        // 0 0 80px #fff,
+        // 0 0 90px #fff,
+        // 0 0 100px #fff,
+        // 0 0 150px #fff;
+        cursor: pointer;
+        text-decoration: underline;
+        // ************* TRANSITION COLOR ***********
+        // color: #d6c7a4;
+        // -webkit-transition: color 1s ease-out;
+        // -moz-transition: color 1s ease-out;
+        // -o-transition: color 1s ease-out;
+        // transition: color 1s ease-out;
+    }
 }
 
 ::ng-deep .menu-primary .mat-mdc-menu-content,
