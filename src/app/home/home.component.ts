@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
 
 
   onDownload(){
-    console.log('test')
     window.open("https://www.google.com", "_blank");
   }
 

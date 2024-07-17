@@ -45,6 +45,8 @@ export class AdminService {
     return this.user ? {...this.user} : undefined
   }
 
+  //END-POINTS
+
   public createUser = (username: string, password: string, admin: boolean) => {
     const user = {username: username, password: password, admin: admin}
 
@@ -58,4 +60,16 @@ export class AdminService {
   public allUsers = () => {
     return this.http.get<Iuser[]>('http://localhost:3305/users');
   }
+
+  public createPost = (titulo: string, noticia: string, username: string) => {
+    const createNoticia = {title: titulo, text: noticia, createdBy: username}
+
+    const successHandler = (result: any) => {
+      console.log(result);
+    }
+
+
+    this.http.post<any>('http://localhost:3305/noticia/create', createNoticia).subscribe(successHandler)
+  }
+
 }

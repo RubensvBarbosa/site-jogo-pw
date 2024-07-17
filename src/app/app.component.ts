@@ -29,10 +29,8 @@ export class AppComponent implements OnInit, OnDestroy{
   checkCurrentRoute(): void {
     if (this.router.url === '/padmin' || this.router.url === '/padmin/home') {
       this.isPAdmin = true;
-      console.log('O usuário está na rota /padmin');
     } else {
       this.isPAdmin = false;
-      console.log('O usuário não está na rota /padmin');
     }
   }
 

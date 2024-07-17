@@ -22,7 +22,6 @@ export class AdminCreateUserComponent implements OnInit {
   }
 
   onAdmin = (event: any) => {
-    console.log(event.checked);
     this.isAdmin = event.checked;
   }
 
