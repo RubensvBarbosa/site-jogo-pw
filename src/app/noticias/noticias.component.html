@@ -1,3 +1,41 @@
-<p>
-  noticias works!
-</p>
+<div class="content">
+  <div class="contentBody">
+    <div class="box">
+      <div class="textClasses">
+        <h2>Novidades!</h2>
+      </div>
+      <div>
+        <div style="width: 650px; height: 584px; overflow: auto; margin-top: 20px;color: #202020;">
+          <ng-container *ngFor="let items of data">
+            <div style="height: 500px;display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 30px;">
+              <div>
+                <div class="title-content">
+                  <p class="title">
+                    {{items.title}}
+                  </p>
+                  <p>
+                    {{items.createdAt | dateFormat}}
+                  </p>
+                </div>
+                <div>
+                  <p style="word-wrap: break-word; white-space: normal;">{{items.text}}</p>
+                </div>
+              </div>
+              <div>
+                {{items.createdBy}}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div>
+          <mat-paginator [length]="data2!.length"
+                        [pageSize]="size"
+                        [pageIndex]="page"
+                        (page)="getData($event)"
+                        >
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

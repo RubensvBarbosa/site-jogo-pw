@@ -14,6 +14,7 @@ import { AdminManagementUserComponent } from './admin/admin-management-user/admi
 import { AdminService } from './admin/admin.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SecurityGuard } from './admin/security.guard';
+import { DateFormatPipe } from './date-format.pipe';
 
 
 //ANGULAR MATERIAL
@@ -30,6 +31,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NoticiasComponent } from './noticias/noticias.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -45,6 +47,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
       AdminPostNewsComponent,
       AdminManagementUserComponent,
       NoticiasComponent,
+      DateFormatPipe
    ],
   imports: [
     HttpClientModule,
@@ -61,7 +64,8 @@ import { NoticiasComponent } from './noticias/noticias.component';
     ReactiveFormsModule,
     MatCardModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatPaginatorModule
   ],
   providers: [
     AdminService,

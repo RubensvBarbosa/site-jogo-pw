@@ -72,4 +72,8 @@ export class AdminService {
     this.http.post<any>('http://localhost:3305/noticia/create', createNoticia).subscribe(successHandler)
   }
 
+  public AllNoticias = () => {
+    return this.http.get<any>('http://localhost:3305/noticia');
+  }
+
 }
