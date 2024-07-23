@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin/admin.service';
 import { Noticias } from './noticias.model';
+import { map, pipe } from 'rxjs';
 
 @Component({
   selector: 'app-noticias',
@@ -18,7 +19,9 @@ export class NoticiasComponent implements OnInit {
   constructor(private adminService: AdminService) { }
 
   ngOnInit() {
-    this.adminService.AllNoticias().subscribe(data => {
+    this.adminService.AllNoticias().pipe(
+      map(data => data.reverse())
+    ).subscribe(data => {
       this.data2 = data
       this.getData({pageIndex: this.page, pageSize: this.size});
     })

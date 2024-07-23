@@ -9,8 +9,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'padmin', component: AdminLoginComponent},
-  // { path: 'padmin/home', canActivate:[SecurityGuard], component: AdminHomeComponent}
-  { path: 'padmin/home', component: AdminHomeComponent},
+  { path: 'padmin/home', canActivate:[SecurityGuard], component: AdminHomeComponent},
   { path: 'noticias', component: NoticiasComponent}
 ];
 

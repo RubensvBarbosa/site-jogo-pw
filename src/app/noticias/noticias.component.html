@@ -13,16 +13,16 @@
                   <p class="title">
                     {{items.title}}
                   </p>
-                  <p>
-                    {{items.createdAt | dateFormat}}
-                  </p>
+                  <div style="display: flex;gap: 10px;">
+                    <p>Por <strong>{{items.createdBy}}</strong></p>
+                    <p>
+                      {{items.createdAt | dateFormat}}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p style="word-wrap: break-word; white-space: normal;">{{items.text}}</p>
+                <div style="padding: 0 80px;">
+                  <p style="word-wrap: break-word; white-space: normal; font-family: Verdana, Geneva, Tahoma, sans-serif;" [innerHTML]="items.text"></p>
                 </div>
-              </div>
-              <div>
-                {{items.createdBy}}
               </div>
             </div>
           </ng-container>
